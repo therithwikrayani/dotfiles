@@ -135,6 +135,8 @@ eval "$(atuin init zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
-# Fzf
-source <(fzf --zsh)
+# Brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# fzf
+source <(fzf --zsh)
