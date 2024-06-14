@@ -131,3 +131,10 @@ eval "$(atuin init zsh)"
 # unset __conda_setup
 # # <<< conda initialize <<<
 
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
+# Fzf
+source <(fzf --zsh)
+
