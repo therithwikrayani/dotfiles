@@ -140,6 +140,3 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # fzf
 source <(fzf --zsh)
-
-# Always allow xhost docker
-xhost + local:docker
