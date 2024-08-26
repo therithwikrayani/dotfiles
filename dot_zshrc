@@ -1,0 +1,12 @@
+# zsh install configs
+HISTFILE=~/.histfile
+HISTSIZE=9001
+SAVEHIST=9001
+setopt nomatch
+unsetopt autocd beep extendedglob notify
+bindkey -e
+
+# Atuin
+eval "$(atuin init zsh)"
+
+
