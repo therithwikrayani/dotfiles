@@ -1,4 +1,4 @@
-# zsh install configs
+# ZSH Default Configs
 HISTFILE=~/.histfile
 HISTSIZE=9001
 SAVEHIST=9001
@@ -9,4 +9,5 @@ bindkey -e
 # Atuin
 eval "$(atuin init zsh)"
 
-
+# Oh-my-posh
+eval "$(oh-my-posh init zsh)"
