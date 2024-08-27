@@ -1,13 +1,50 @@
-# ZSH Default Configs
-HISTFILE=~/.histfile
-HISTSIZE=9001
-SAVEHIST=9001
-setopt nomatch
-unsetopt autocd beep extendedglob notify
-bindkey -e
+# Source Zinit
+source /usr/share/zinit/zinit.zsh
 
-# Atuin
+# ZSH Plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# Oh-my-zsh Plugins
+zinit snippet OMZP::sudo	# Double Esc = sudo previous command
+zinit snippet OMZP::command-not-found
+
+# Load completions
+autoload -U compinit && compinit
+zinit cdreplay -q
+
+# Keybinds
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# History
+HISTSIZE=9001
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Other Random Options
+setopt nomatch			# Print an error if filename match not found
+unsetopt autocd			# Don't cd into directory without "cd"
+unsetopt beep			# Don't beep on errors
+unsetopt notify			# Don't report background job status immediately
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Shell Integrations
 eval "$(atuin init zsh)"
 
-# Oh-my-posh
-eval "$(oh-my-posh init zsh)"
+# Aliases
+alias ls='ls --color'
+
