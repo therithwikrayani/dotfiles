@@ -48,13 +48,16 @@ unsetopt beep			# Don't beep on errors
 unsetopt notify			# Don't report background job status immediately
 
 # Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}'
 eval "$(dircolors)"
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 
 # Shell Integrations
 eval "$(atuin init zsh)"
+
+# Add folders to path
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Aliases
 alias ls='ls --color'
