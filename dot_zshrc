@@ -56,9 +56,6 @@ zstyle ':completion:*' menu select
 # Shell Integrations
 eval "$(atuin init zsh)"
 
-# Add folders to path
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Aliases
 alias ls='ls --color'
 alias la='ls -a --color'
